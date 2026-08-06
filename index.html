@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MR Bubble Hub - Medical Representative Detailing & Territory Suite</title>
+  <meta name="description" content="Next-Gen Field Detailing, Interactive Territory Bubble Canvas, DCR Management & Mind Refresh Suite for Medical Representatives">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+
+  <!-- Main Container -->
+  <div class="app-layout">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-logo">
+          <span class="bubble-icon"></span>
+        </div>
+        <div class="brand-text">
+          <h2>MR Bubble</h2>
+          <span class="version-tag">Pro v2.5</span>
+        </div>
+      </div>
+
+      <nav class="nav-menu">
+        <button class="nav-item active" data-tab="overview">
+          <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Dashboard & Photos</span>
+        </button>
+
+        <button class="nav-item" data-tab="territory">
+          <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          <span>Bubble Territory</span>
+          <span class="badge">Live Canvas</span>
+        </button>
+
+        <button class="nav-item" data-tab="detailing">
+          <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="14" x="3" y="3" rx="2"/><path d="M7 21h10"/><path d="M12 17v4"/></svg>
+          <span>E-Detailing Deck</span>
+        </button>
+
+        <button class="nav-item" data-tab="dcr">
+          <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          <span>Daily Call Report</span>
+        </button>
+
+        <button class="nav-item" data-tab="inventory">
+          <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+          <span>Sample Stock</span>
+        </button>
+
+        <button class="nav-item highlight-btn" data-tab="mind-refresh">
+          <svg class="nav-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><path d="M4.93 19.07l2.83-2.83"/><path d="M16.24 7.76l2.83-2.83"/></svg>
+          <span>Mind Refresh Pop</span>
+        </button>
+      </nav>
+
+      <div class="user-card">
+        <div class="user-avatar">RS</div>
+        <div class="user-info">
+          <h4>Rajesh Sharma</h4>
+          <p>Sr. Medical Rep (North)</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Body -->
+    <main class="main-content">
+      
+      <!-- Top Navbar Header -->
+      <header class="top-header">
+        <div class="header-search">
+          <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="globalSearch" placeholder="Search Doctor, Specialty, Hospital, Product...">
+        </div>
+
+        <div class="header-actions">
+          <div class="stat-chip">
+            <span class="chip-label">DCR Calls Today</span>
+            <span class="chip-val" id="headerCallsVal">8 / 12</span>
+          </div>
+
+          <div class="stat-chip">
+            <span class="chip-label">POB Order Value</span>
+            <span class="chip-val highlight" id="headerPobVal">₹48,500</span>
+          </div>
+
+          <button id="themeToggleBtn" class="action-circle-btn" title="Toggle Light/Dark Theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+          </button>
+
+          <button id="logVisitBtn" class="btn-primary">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span>+ Quick Log Call</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- VIEW 1: OVERVIEW & SIDE-BY-SIDE PHOTOS -->
+      <section id="tab-overview" class="tab-pane active">
+        
+        <!-- Hero Header -->
+        <div class="hero-banner">
+          <div class="hero-text">
+            <span class="tagline">Field Executive Intelligence Platform</span>
+            <h1>Welcome back, Rajesh! 👋</h1>
+            <p>Your Medical Detailing & Doctor Territory Overview for Today. Both field presentation photos & active metrics are live in one single view.</p>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-card">
+              <div class="m-icon purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div class="m-data">
+                <span class="num">34</span>
+                <span class="lbl">Doctors in Territory</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="m-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+              <div class="m-data">
+                <span class="num">A+ Grade</span>
+                <span class="lbl">Territory Performance</span>
+              </div>
+            </div>
+            <div class="metric-card">
+              <div class="m-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+              <div class="m-data">
+                <span class="num">140 Stock</span>
+                <span class="lbl">Sample Kits Ready</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SPECIAL SECTION: BOTH PHOTOS IN ONE PAGE -->
+        <div class="photos-showcase-container glass-panel">
+          <div class="section-header">
+            <div>
+              <div class="badge-pill">Visual Aid & Field Showcase</div>
+              <h2 class="section-title">Field Detailing & Product Showcase (Both Photos in One Page)</h2>
+              <p class="section-desc">Interactive dual-view showcasing real-world MR Doctor detailing presentation alongside the NeuroSyn-X formulation visual aid.</p>
+            </div>
+            <button class="btn-secondary" id="fullscreenPhotosBtn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+              <span>Expand Dual View</span>
+            </button>
+          </div>
+
+          <!-- Dual Photo Side-by-Side Grid -->
+          <div class="dual-photos-grid">
+            
+            <!-- Photo 1 Card -->
+            <div class="photo-card glass-card">
+              <div class="photo-badge">Photo 1: In-Clinic Detailing</div>
+              <div class="photo-img-wrapper">
+                <img src="assets/mr_detailing.jpg" alt="Medical Representative Detailing Tablet to Doctor in Office" id="photo1Img" class="dual-img">
+                <div class="photo-overlay">
+                  <span class="zoom-btn" onclick="openImageModal('assets/mr_detailing.jpg', 'MR Doctor Detailing Presentation')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    View Fullscreen
+                  </span>
+                </div>
+              </div>
+              <div class="photo-details">
+                <h3>In-Clinic Doctor Detailing</h3>
+                <p class="photo-caption">Medical Representative presenting interactive tablet visual aid to Dr. David Chen (Pulmonology / Neuro Specialist) in office.</p>
+                <div class="tags-row">
+                  <span class="tag">Pulmonology & Neuro</span>
+                  <span class="tag">Digital Tablet Aid</span>
+                  <span class="tag green">Doctor Agreed</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 2 Card -->
+            <div class="photo-card glass-card">
+              <div class="photo-badge cyan">Photo 2: Product Visual Aid</div>
+              <div class="photo-img-wrapper">
+                <img src="assets/pharma_product.jpg" alt="NeuroSyn-X Advanced Formulation and Molecular Bubble Infographic" id="photo2Img" class="dual-img">
+                <div class="photo-overlay">
+                  <span class="zoom-btn" onclick="openImageModal('assets/pharma_product.jpg', 'NeuroSyn-X Bubble Formulation Visual Aid')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
+                    View Fullscreen
+                  </span>
+                </div>
+              </div>
+              <div class="photo-details">
+                <h3>NeuroSyn-X™ Formulation Aid</h3>
+                <p class="photo-caption">Advanced cognitive enhancement formulation featuring interactive 3D bubble molecular receptors & targeted neurotransmitter pathway diagram.</p>
+                <div class="tags-row">
+                  <span class="tag purple">Targeted Receptor +84%</span>
+                  <span class="tag blue">Batch #NS042</span>
+                  <span class="tag pink">High Prescription</span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Dashboard Bottom Cards -->
+        <div class="grid-2col mt-6">
+          
+          <!-- Today's Call Schedule -->
+          <div class="glass-panel">
+            <div class="panel-header">
+              <h3>Today's Doctor Call Schedule</h3>
+              <button class="btn-sm" onclick="switchTab('territory')">Open Territory Map →</button>
+            </div>
+            <div class="schedule-list" id="scheduleList">
+              <!-- Dynamically Populated -->
+            </div>
+          </div>
+
+          <!-- Top Prescribing Products -->
+          <div class="glass-panel">
+            <div class="panel-header">
+              <h3>Key Product Detailing Portfolio</h3>
+              <button class="btn-sm" onclick="switchTab('detailing')">Launch Slide Deck →</button>
+            </div>
+            <div class="products-list">
+              <div class="product-item">
+                <div class="p-icon purple">NS</div>
+                <div class="p-info">
+                  <h4>NeuroSyn-X Tablets 300mg</h4>
+                  <p>Cognitive Enhancement & N-Methyl Receptor Inhibitor</p>
+                </div>
+                <div class="p-stat">
+                  <span class="bold">₹2,800/box</span>
+                  <span class="sub text-green">+34% growth</span>
+                </div>
+              </div>
+              
+              <div class="product-item">
+                <div class="p-icon blue">AO</div>
+                <div class="p-info">
+                  <h4>Aergzin-OT Inhaler</h4>
+                  <p>New Approach to Asthma & Bronchitis Management</p>
+                </div>
+                <div class="p-stat">
+                  <span class="bold">₹1,450/unit</span>
+                  <span class="sub text-blue">95.2% Efficacy</span>
+                </div>
+              </div>
+
+              <div class="product-item">
+                <div class="p-icon pink">CV</div>
+                <div class="p-info">
+                  <h4>CardioVast-50 Capsule</h4>
+                  <p>Hypertension & Vascular Endothelial Support</p>
+                </div>
+                <div class="p-stat">
+                  <span class="bold">₹980/strip</span>
+                  <span class="sub text-purple">High Doctor Demand</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- VIEW 2: BUBBLE TERRITORY CANVAS -->
+      <section id="tab-territory" class="tab-pane">
+        <div class="panel-header glass-panel">
+          <div>
+            <h2>Doctor Territory Bubble Canvas</h2>
+            <p>Interactive 2D physics bubble map of your doctor portfolio. Bubble size = monthly potential, colors = specialty.</p>
+          </div>
+          <div class="canvas-controls">
+            <div class="filter-group">
+              <label>Specialty Filter:</label>
+              <select id="canvasFilterSpecialty" class="select-input">
+                <option value="ALL">All Specialties</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Neurology">Neurology</option>
+                <option value="Pulmonology">Pulmonology</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Orthopedics">Orthopedics</option>
+              </select>
+            </div>
+            <button class="btn-secondary" id="resetCanvasPhysics">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+              Re-Float Bubbles
+            </button>
+          </div>
+        </div>
+
+        <div class="canvas-container glass-panel mt-4">
+          <canvas id="territoryCanvas"></canvas>
+          
+          <div class="canvas-legend">
+            <span class="legend-item"><span class="dot card"></span> Cardiology</span>
+            <span class="legend-item"><span class="dot neuro"></span> Neurology</span>
+            <span class="legend-item"><span class="dot pulmo"></span> Pulmonology</span>
+            <span class="legend-item"><span class="dot pedia"></span> Pediatrics</span>
+            <span class="legend-item"><span class="dot ortho"></span> Orthopedics</span>
+            <span class="legend-hint">💡 Hint: Click any bubble to view Doctor details or Launch Detailing!</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 3: E-DETAILING DECK -->
+      <section id="tab-detailing" class="tab-pane">
+        <div class="panel-header glass-panel">
+          <div>
+            <h2>Interactive E-Detailing Visual Deck</h2>
+            <p>Present digital scientific slides directly to doctors with live dosage calculator & clinical trial charts.</p>
+          </div>
+          <div class="deck-controls">
+            <button id="prevSlideBtn" class="btn-secondary">← Previous Slide</button>
+            <span class="slide-indicator" id="slideIndicator">Slide 1 of 4</span>
+            <button id="nextSlideBtn" class="btn-primary">Next Slide →</button>
+          </div>
+        </div>
+
+        <div class="deck-stage glass-panel mt-4">
+          
+          <!-- Slide Content Area -->
+          <div id="slideContent" class="slide-container">
+            <!-- Dynamically Rendered Slide -->
+          </div>
+
+        </div>
+      </section>
+
+      <!-- VIEW 4: DAILY CALL REPORT (DCR) -->
+      <section id="tab-dcr" class="tab-pane">
+        <div class="grid-2col">
+          
+          <!-- Log Call Form -->
+          <div class="glass-panel">
+            <div class="panel-header">
+              <h2>Log Doctor Visit (DCR)</h2>
+            </div>
+            <form id="dcrForm" class="dcr-form mt-4">
+              <div class="form-group">
+                <label>Select Doctor</label>
+                <select id="dcrDoctorSelect" class="select-input" required>
+                  <option value="">-- Choose Doctor from Territory --</option>
+                </select>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Visit Status</label>
+                  <select id="dcrVisitStatus" class="select-input">
+                    <option value="Completed">Completed - Detailed</option>
+                    <option value="Samples Given">Samples Delivered</option>
+                    <option value="POB Booked">Order Booked (POB)</option>
+                    <option value="Doctor Busy">Doctor Busy / Rescheduled</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label>Products Detailed</label>
+                  <select id="dcrProduct" class="select-input">
+                    <option value="NeuroSyn-X Tablets">NeuroSyn-X Tablets</option>
+                    <option value="Aergzin-OT Inhaler">Aergzin-OT Inhaler</option>
+                    <option value="CardioVast-50 Capsule">CardioVast-50 Capsule</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label>POB Value (₹)</label>
+                  <input type="number" id="dcrPobVal" class="text-input" placeholder="e.g. 5000" value="0">
+                </div>
+
+                <div class="form-group">
+                  <label>Samples Distributed (Units)</label>
+                  <input type="number" id="dcrSampleQty" class="text-input" placeholder="e.g. 2" value="1">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Doctor Feedback & Discussion Notes</label>
+                <textarea id="dcrNotes" class="textarea-input" rows="3" placeholder="Doctor agreed for trial prescribing for 10 patients..."></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary full-width">Submit Daily Call Entry →</button>
+            </form>
+          </div>
+
+          <!-- Call Logs History -->
+          <div class="glass-panel">
+            <div class="panel-header">
+              <h2>Today's Logged Calls</h2>
+              <span class="badge green" id="dcrCountBadge">8 Visits Recorded</span>
+            </div>
+
+            <div class="dcr-history-list mt-4" id="dcrHistoryList">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- VIEW 5: SAMPLE INVENTORY -->
+      <section id="tab-inventory" class="tab-pane">
+        <div class="panel-header glass-panel">
+          <div>
+            <h2>MR Promo Sample Stock Manager</h2>
+            <p>Track allocated promotional samples, batch expiry dates, and distribution stock.</p>
+          </div>
+          <button class="btn-primary" onclick="alert('Sample Reorder Request Sent to Stockist / Depot!')">+ Request Sample Stock</button>
+        </div>
+
+        <div class="inventory-grid mt-4" id="inventoryGrid">
+          <!-- Dynamically Populated Stock Cards -->
+        </div>
+      </section>
+
+      <!-- VIEW 6: MIND REFRESH BUBBLE POP -->
+      <section id="tab-mind-refresh" class="tab-pane">
+        <div class="panel-header glass-panel">
+          <div>
+            <h2>Mind Refreshing Bubble Pop (Stress Reliever) 🧼</h2>
+            <p>Pop interactive physics bubbles between doctor field calls to unwind! Features web audio pop sounds & relaxation combo streaks.</p>
+          </div>
+          <div class="pop-stats">
+            <span class="stat-badge">Pops: <strong id="popCountVal">0</strong></span>
+            <span class="stat-badge combo">Combo Streak: <strong id="popComboVal">0x</strong></span>
+            <button id="clearPopsBtn" class="btn-secondary">Reset Bubbles</button>
+          </div>
+        </div>
+
+        <div class="pop-canvas-container glass-panel mt-4">
+          <canvas id="mindPopCanvas"></canvas>
+          <div class="canvas-pop-overlay">
+            <div class="ambient-controls">
+              <button id="toggleAudioBtn" class="btn-sm pink">🔊 Ambient Pop Sound: ON</button>
+              <span class="pop-tip">Tip: Tap or drag across floating bubbles to pop them!</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- Image Lightbox Modal for Photo Showcase -->
+  <div id="imageModal" class="modal-backdrop">
+    <div class="modal-box photo-modal">
+      <button class="modal-close" onclick="closeImageModal()">×</button>
+      <h3 id="modalImgTitle">Photo Detail View</h3>
+      <img id="modalImgTag" src="" alt="Fullscreen view" class="modal-full-img">
+    </div>
+  </div>
+
+  <!-- Doctor Detail Modal -->
+  <div id="doctorModal" class="modal-backdrop">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeDoctorModal()">×</button>
+      <div id="doctorModalContent">
+        <!-- Dynamically Filled -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="app.js"></script>
+</body>
+</html>

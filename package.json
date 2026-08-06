@@ -1,0 +1,19 @@
+{
+  "name": "mr-bubble-app",
+  "version": "1.0.0",
+  "description": "Medical Representative (MR) Bubble Application - Standalone Interactive Territory & E-Detailing Platform",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8095",
+    "dev": "python3 -m http.server 8095"
+  },
+  "keywords": [
+    "bubble-app",
+    "medical-representative",
+    "canvas-physics",
+    "e-detailing",
+    "dcr"
+  ],
+  "author": "",
+  "license": "ISC"
+}
