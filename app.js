@@ -9,7 +9,7 @@ const DOCTORS_DATA = [
   { id: 3, name: "Dr. Vikram Sethi", specialty: "Cardiology", hospital: "Apollo Heart Institute", tier: "A", potential: "₹65,000/mo", status: "Visited Today", color: "#6366f1", radius: 32, x: 600, y: 150, vx: 0.5, vy: -0.2 },
   { id: 4, name: "Dr. Meera Kapoor", specialty: "Pediatrics", hospital: "Lotus Children Hospital", tier: "B", potential: "₹42,000/mo", status: "Pending", color: "#10b981", radius: 26, x: 240, y: 340, vx: 0.2, vy: -0.4 },
   { id: 5, name: "Dr. Rajeshwar Rao", specialty: "Orthopedics", hospital: "Fortis Bone & Joint", tier: "A", potential: "₹78,000/mo", status: "Pending", color: "#f97316", radius: 30, x: 500, y: 380, vx: -0.4, vy: 0.2 },
-  { id: 6, name: "Dr. Sunita Tiwari", specialty: "Neurology", hospital: "AIIMS Neuro Wing", tier: "A+", potential: "₹1,10,000/mo", status: "Visited Today", color: "#a855f7", radius: 42, x: 720, y: 280, vx: 0.3, vy: 0.5 },
+  { id: 6, name: "Dr. Sunita Sharma", specialty: "Neurology", hospital: "AIIMS Neuro Wing", tier: "A+", potential: "₹1,10,000/mo", status: "Visited Today", color: "#a855f7", radius: 42, x: 720, y: 280, vx: 0.3, vy: 0.5 },
   { id: 7, name: "Dr. Kabir Malhotra", specialty: "Cardiology", hospital: "Escorts Heart Clinic", tier: "A", potential: "₹90,000/mo", status: "Pending", color: "#6366f1", radius: 35, x: 120, y: 420, vx: -0.5, vy: -0.3 }
 ];
 
@@ -52,7 +52,7 @@ const SLIDES_DATA = [
 const DCR_HISTORY = [
   { doctor: "Dr. David Chen", specialty: "Pulmonology", time: "09:30 AM", status: "Completed", POB: "₹14,500", samples: 3, notes: "Requested 5 additional promo samples for clinic trial." },
   { doctor: "Dr. Vikram Sethi", specialty: "Cardiology", time: "11:15 AM", status: "POB Booked", POB: "₹22,000", samples: 4, notes: "Booked 20 boxes of CardioVast-50." },
-  { doctor: "Dr. Sunita Tiwari", specialty: "Neurology", time: "02:00 PM", status: "Completed", POB: "₹12,000", samples: 2, notes: "Appreciated NeuroSyn-X trial data presentation." }
+  { doctor: "Dr. Sunita Sharma", specialty: "Neurology", time: "02:00 PM", status: "Completed", POB: "₹12,000", samples: 2, notes: "Appreciated NeuroSyn-X trial data presentation." }
 ];
 
 const SAMPLE_INVENTORY = [
